@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Transactions{% endblock %}
+{% block content %}
+<h2>Transactions for {{ user.name }}</h2>
+<p><strong>Current Balance:</strong> ${{ "%.2f"|format(user.balance) }}</p>
+
+<form method="POST" class="mb-4">
+  <div class="row">
+    <div class="col">
+      <input name="amount" type="number" step="0.01" class="form-control" placeholder="Amount" required>
+    </div>
+    <div class="col">
+      <select name="type" class="form-select" required>
+        <option value="credit">Credit</option>
+        <option value="debit">Debit</option>
+      </select>
+    </div>
+    <div class="col">
+      <button class="btn btn-success w-100">Submit</button>
+    </div>
+  </div>
+</form>
+
+<h4>Transaction History</h4>
+<table class="table table-striped">
+  <thead><tr><th>Type</th><th>Amount</th><th>Time</th></tr></thead>
+  <tbody>
+    {% for txn in transactions %}
+    <tr>
+      <td>{{ txn.type }}</td>
+      <td>${{ "%.2f"|format(txn.amount) }}</td>
+      <td>{{ txn.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
