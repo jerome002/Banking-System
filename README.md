@@ -1,20 +1,26 @@
-<<<<<<< HEAD
-# Banking-System
-=======
 # Banking System
 
-A simple banking system built with Flask, Node.js, and MySQL. Supports basic CRUD operations and user interaction via web GUI.
+A simple, full-stack **banking system** built using **Flask** (Python) with **MySQL**, **Bootstrap 5**, and **Flask-Login**. This system allows user account management, authentication, and transaction tracking.
+
+---
 
 ## Features
-- Add Users
-- View All Users
-- REST API Layer (optional via Node.js)
-- MySQL Database
 
-## Setup
+- Admin login system with Flask-Login
+- Add and manage user accounts
+- View customer balances
+- Record transactions
+- Export transaction history to **PDF** or **CSV**
+- Responsive UI with Bootstrap 5
 
-### Backend
-```bash
-pip install -r requirements.txt
-python app.py
->>>>>>> 4e3ec7b (my first commit)
+---
+
+## Tech Stack
+
+| Backend        | Frontend        | Database   | Auth              | Exporting      |
+|----------------|------------------|-------------|-------------------|----------------|
+| Flask (Python) | Bootstrap 5      | MySQL       | Flask-Login       | `pdfkit`, CSV  |
+
+---
+
+
